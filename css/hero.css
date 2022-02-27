@@ -15,10 +15,6 @@
   background-attachment: fixed;
 }
 
-.bg-1 {
-  background-image: url("/images/img1.jpg");
-}
-
 .hero-banner {
     border-radius: 1rem;
     max-width: 80%;
