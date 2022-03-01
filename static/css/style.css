@@ -3871,15 +3871,18 @@ a {
 	-moz-osx-font-smoothing: grayscale
 }
 
-.cd-schedule__name, .cd-schedule-modal__name {
-	font-size: 1.44em;
-	font-size: var(--text-lg)
+em.cd-schedule__name, 
+em.cd-schedule-modal__name {
 
 	word-break:  break-all;
 	-webkit-hyphens: auto;
    	-moz-hyphens: auto;
     hyphens: auto;
+}
 
+.cd-schedule__name, .cd-schedule-modal__name {
+	font-size: 1.44em;
+	font-size: var(--text-lg)
 }
 
 @media (min-width:64rem) {
