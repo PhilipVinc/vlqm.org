@@ -1,0 +1,31 @@
+{{ $navbar := $.Site.Params.navbar }}
+<!-- Navbar partial -->
+<nav class="navbar sticky-top navbar-dark bg-dark px-3 py-2 navbar-expand-md d-flex">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-custom-brand" href="{{ "." | absURL}}">
+          {{- with $navbar.logo -}}
+          <img class="navbar-brand-logo d-inline-block align-center" src="{{ printf "%s" . | absURL }}"   loading="lazy">
+          {{- end -}}
+          <div class="navbar-brand-text d-none d-lg-inline-block align-center">
+          {{- .Site.Title -}}
+          </div>
+        </a>
+
+        <!-- Button showing on small screens to show the navbar content -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- /Button showing on small screens to show the navbar content -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            {{- range .Page.Params.sections -}}
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#{{- .handle -}}">{{- .title -}}</a>
+            </li>
+            {{- end -}}
+          </ul>
+        </div>
+    </div>
+</nav>
+<!-- /Navbar partial -->

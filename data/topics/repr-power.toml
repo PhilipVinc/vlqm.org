@@ -1,0 +1,5 @@
+name = "Representational Power"
+
+content = """
+Understanding which states can be represented by variational models, like neural networks or quantum circuits, is a vital task to theoretically motivate variational methods. Furthermore, it is important to understand how factors such as width, depth and the type of parametrized building blocks of such architectures affect the accuracy of the solution.
+"""

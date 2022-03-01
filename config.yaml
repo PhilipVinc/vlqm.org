@@ -1,0 +1,15 @@
+baseURL: "https://philipvinc.github.io/vlqm.org"
+languageCode: "en-us"
+title: "Variational Learning Quantum Matter"
+subtitle: "Bernoulli Workshop, 4-8 July 2022, EPFLausanne, Switzerland"
+
+params:
+  footer: "Variational Learning of Quantum Matter, a Bernoulli workshop organized by Jannes Nys and Filippo Vicentini and supported by the Computational Quantum Science Laboratory (CQSL)."
+
+  navbar:
+    logo: "images/epfl_logo.svg"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

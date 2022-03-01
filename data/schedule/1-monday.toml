@@ -1,0 +1,44 @@
+day = "Monday"
+
+[[lectures]]
+  label = "start"
+  title = "Reception"
+  start = "9:30"
+  end = "10:30"
+  type = "group"
+
+[[lectures]]
+  label = "lec1"
+  title = "Representation power"
+  start = "10:30"
+  end = "12:30"
+  type = "spotlight"
+
+[[lectures]]
+  label = "food"
+  title = "Lunch"
+  start = "12:30"
+  end = "14:30"
+  type = "lunch"
+
+[[lectures]]
+  label = "food"
+  title = "Lectures"
+  start = "14:30"
+  end = "15:30"
+  type = "spotlight"
+
+[[lectures]]
+  label = "food"
+  title = "Break"
+  start = "15:30"
+  end = "16:00"
+  type = "lunch"
+
+[[lectures]]
+  label = "food"
+  title = "Lectures"
+  start = "16:00"
+  end = "17:00"
+  type = "spotlight"
+  

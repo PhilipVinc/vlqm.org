@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div id="banner" class="container-fluid d-flex flex-column hero bg-full py-3" style="background-image: url('{{- .Page.Params.background | absURL -}}');">
+    <div class="row hero-banner mt-auto mb-5">
+        <div class="col py-4 px-3 align-self-center">
+            <h1 class="title hero-title d-inlineblock text-center text-light mb-4">{{- .Page.Title | markdownify -}}</h1>
+            <h2 class="title hero-subtitle text-center text-light mt-2">{{- .Page.Params.subtitle | markdownify -}}</h2>
+        </div>
+    </div>
+
+    <div class="row hero-banner hero-banner-synopsis bottom mb-2">
+        <div class="col py-2 px-3 align-self-center">
+            <h3 class="title hero-subtitle text-center text-light">{{- .Page.Params.synopsis | markdownify -}}</h3>
+        </div>
+    </div>
+</div>
+
+{{- partial "navbar" . -}}
+
+{{ .Content }}
+
+{{ end }}

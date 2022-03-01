@@ -1,0 +1,36 @@
+day = "Tuesday"
+
+[[lectures]]
+  label = "lec1"
+  title = "The Furst lecture"
+  start = "9:00"
+  end = "12:30"
+  type = "spotlight"
+
+[[lectures]]
+  label = "food"
+  title = "Lunch"
+  start = "12:30"
+  end = "14:30"
+  type = "lunch"
+
+[[lectures]]
+  label = "food"
+  title = "Lectures"
+  start = "14:30"
+  end = "16:00"
+  type = "spotlight"
+  
+[[lectures]]
+  label = "food"
+  title = "Break"
+  start = "16:00"
+  end = "16:30"
+  type = "lunch"
+
+[[lectures]]
+  label = "food"
+  title = "Round Table"
+  start = "16:30"
+  end = "18:00"
+  type = "group"

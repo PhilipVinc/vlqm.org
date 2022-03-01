@@ -1,0 +1,5 @@
+name = "Symmetries"
+
+content = """
+While respecting physical symmetries of quantum systems is of utmost importance, resorting to generic and flexible wave-function parametrization (such as Neural Network Quantum States) also comes at the cost of breaking these symmetries. Recent work has shown that embedding symmetries into the wave-function ansatze tends to greatly improve both the accuracy by which one can represent a quantum system, as well as gain efficiency in its optimization. In this pillar, we cover methods to embed symmetries into neural network quantum states and variational quantum circuits, and the close connection between these approaches.
+"""
