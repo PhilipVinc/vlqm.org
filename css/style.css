@@ -3911,6 +3911,9 @@ em.cd-schedule__name.short {
 }
 em.cd-schedule__name.regular {
 	max-height: 3.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 em.cd-schedule__name.spotlight {
 	max-height: 7.5em;
@@ -3927,6 +3930,11 @@ em.cd-schedule__name.spotlight {
 		font-size: calc(var(--text-sm)*1.2)
 	}
 
+}
+
+.hideme {
+	visibility: hidden;
+	display: none;
 }
 
 .cd-schedule-modal__date, .cd-schedule__event a::before {
@@ -4065,6 +4073,9 @@ em.cd-schedule__name.spotlight {
 		display: block;
 		padding: 0.75em;
 		padding: var(--space-sm)
+	}
+	.cd-schedule-modal__content .cd-schedule-modal__name {
+		padding-top: 2em;
 	}
 
 }
@@ -4306,4 +4317,14 @@ em.cd-schedule__name.spotlight {
 
 .cd-schedule-modal__event-info p {
 	padding-top: 1em;
+ 	text-align: justify;
+
 }
+
+.top_logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc(50% - 2*var(--component-padding));
+}
+
