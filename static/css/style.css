@@ -3882,6 +3882,10 @@ a {
 	-moz-osx-font-smoothing: grayscale
 }
 
+em.cd-schedule__speaker.break {
+	color: white;
+}
+
 em.cd-schedule__name, 
 em.cd-schedule-modal__name {
 
@@ -3945,8 +3949,7 @@ em.cd-schedule__name.spotlight {
 	background: var(--cd-color-event-1)
 }
 .cd-schedule__event [data-event="break"], .cd-schedule-modal[data-event="break"] .cd-schedule-modal__header-bg {
-	background: hsl(271, 23%, 26%);
-	background: var(--cd-color-event-2)
+	background: #C23B22;
 }
 .cd-schedule__event [data-event="lunch"], .cd-schedule-modal[data-event="lunch"] .cd-schedule-modal__header-bg {
 	background: hsl(162, 14%, 68%);
