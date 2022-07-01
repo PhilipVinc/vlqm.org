@@ -2,43 +2,103 @@ day = "Monday"
 
 [[lectures]]
   label = "start"
-  title = "Reception"
-  start = "9:30"
-  end = "10:30"
+  title = "Welcome"
+  start = "9:15"
+  end = "9:30"
   type = "group"
 
 [[lectures]]
   label = "lec1"
-  title = "Representation power"
-  start = "10:30"
-  end = "12:30"
+  start = "9:30"
+  end = "10:30"
   type = "spotlight"
+  speaker = "Sophia Economou"
+  affiliation = "MIT"
+  title = "Representation power"
+  abstract = "Variational quantum algorithms (VQAs) constitute a class of hybrid quantum-classical algorithms that are envisioned as appropriate for noisy intermediate scale quantum processors. The majority of VQAs focus on quantum simulation, and particularly finding properties of many-body quantum systems, such as the ground state energies of complicated molecules. Other problems, such as optimization and machine learning are also being explored with this approach. In VQAs, the quantum processor is where the quantum state is variationally prepared and where measurements are made, while the classical computer performs optimization. After reviewing the concept of VQAs and their main aspects: state preparation, measurement, and optimization, I will highlight our work on designing efficient, compact ansatze both for many-body and for optimization problems. "
+
+[[lectures]]
+  label = "lec2"
+  start = "10:30"
+  end = "11:05"
+  type = "standard"
+  speaker = "Patrick Huembeli"
+  affiliation = "Menten"
+  title = "Entanglement Forging with generative neural network models"
+  abstract = "The optimal use of quantum and classical computational techniques together is important to address problems that cannot be easily solved by quantum computations alone. This is the case of the ground state problem for quantum many-body systems. We show here that probabilistic generative models can work in conjunction with quantum algorithms to design hybrid quantum-classical variational ansätze that forge entanglement to lower quantum resource overhead. The variational ansätze comprise parametrized quantum circuits on two separate quantum registers, and a classical generative neural network that can entangle them by learning a Schmidt decomposition of the whole system. The method presented is efficient in terms of the number of measurements required to achieve fixed precision on expected values of observables. To demonstrate its effectiveness, we perform numerical experiments on the transverse field Ising model in one and two dimensions, and fermionic systems such as the t-V Hamiltonian of spinless fermions on a lattice."
+
+[[lectures]]
+  label = "break"
+  title = "Break"
+  start = "11:05"
+  end = "11:35"
+  type = "lunch"
+
+[[lectures]]
+  label = "lec2"
+  start = "11:35"
+  end = "12:10"
+  type = "standard"
+  speaker = "George Booth"
+  affiliation = ""
+  title = "Representation power"
+
+[[lectures]]
+  label = "lec2"
+  start = "12:10"
+  end = "12:45"
+  type = "standard"
+  speaker = "Olivier Gauthe"
+  affiliation = "EPFL"
+  title = "Representation power"
 
 [[lectures]]
   label = "food"
   title = "Lunch"
-  start = "12:30"
-  end = "14:30"
+  start = "12:45"
+  end = "14:15"
   type = "lunch"
 
 [[lectures]]
-  label = "food"
-  title = "Lectures"
-  start = "14:30"
-  end = "15:30"
+  label = "lec1"
+  start = "14:15"
+  end = "15:15"
   type = "spotlight"
+  speaker = "Max Welling"
+  affiliation = ""
+  title = "The PDE prior"
+  abstract = "Partial Differential Equations (PDEs) are an extremely general tool to describe continuous, local, causal processes in a broad spectrum of the sciences, including the Schrodinger Equation. In this talk I will first discuss how PDEs can be used as a method to describe the continuous limit of a CNNs and then briefly comment on to extend that to quantum fields. The latter happens to be very naturally mapped to an optical quantum computer. Next, inspired by how people have observed waves in brain activity, we use PDEs to describe the dynamics of hidden units' activities when predicting the future. "
 
 [[lectures]]
-  label = "food"
+  label = "lec2"
+  start = "15:15"
+  end = "15:50"
+  type = "standard"
+  speaker = "Attila"
+  affiliation = ""
+  title = "Representation power"
+
+[[lectures]]
+  label = "break"
   title = "Break"
-  start = "15:30"
-  end = "16:00"
+  start = "15:50"
+  end = "16:20"
   type = "lunch"
 
 [[lectures]]
-  label = "food"
-  title = "Lectures"
-  start = "16:00"
-  end = "17:00"
-  type = "spotlight"
-  
+  label = "lec2"
+  start = "16:20"
+  end = "16:40"
+  type = "standard"
+  speaker = "Giulia Mazzola"
+  affiliation = ""
+  title = "Representation power"
+
+[[lectures]]
+  label = "lec2"
+  start = "16:40"
+  end = "17:15"
+  type = "standard"
+  speaker = "Yusuke Nomura"
+  affiliation = ""
+  title = "Artificial neural networks for exploring quantum many-body physics"

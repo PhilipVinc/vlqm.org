@@ -1,51 +1,73 @@
-  <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
-    <div class="cd-schedule__timeline">
-      <ul>
-        <li><span>09:00</span></li>
-        <li><span>09:30</span></li>
-        <li><span>10:00</span></li>
-        <li><span>10:30</span></li>
-        <li><span>11:00</span></li>
-        <li><span>11:30</span></li>
-        <li><span>12:00</span></li>
-        <li><span>12:30</span></li>
-        <li><span>13:00</span></li>
-        <li><span>13:30</span></li>
-        <li><span>14:00</span></li>
-        <li><span>14:30</span></li>
-        <li><span>15:00</span></li>
-        <li><span>15:30</span></li>
-        <li><span>16:00</span></li>
-        <li><span>16:30</span></li>
-        <li><span>17:00</span></li>
-        <li><span>17:30</span></li>
-        <li><span>18:00</span></li>
-      </ul>
-    </div> <!-- .cd-schedule__timeline -->
-  
-    <div class="cd-schedule__events">
-      <ul>
-        {{ range site.Data.schedule }}
+<div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+  <div class="cd-schedule__timeline">
+    <ul>
+      <li><span>09:00</span></li>
+      <li><span>09:15</span></li>
+      <li><span>09:30</span></li>
+      <li><span>09:45</span></li>
+      <li><span>10:00</span></li>
+      <li><span>10:15</span></li>
+      <li><span>10:30</span></li>
+      <li><span>10:45</span></li>
+      <li><span>11:00</span></li>
+      <li><span>11:15</span></li>
+      <li><span>11:30</span></li>
+      <li><span>11:45</span></li>
+      <li><span>12:00</span></li>
+      <li><span>12:15</span></li>
+      <li><span>12:30</span></li>
+      <li><span>12:45</span></li>
+      <li><span>13:00</span></li>
+      <li><span>13:15</span></li>
+      <li><span>13:30</span></li>
+      <li><span>13:45</span></li>
+      <li><span>14:00</span></li>
+      <li><span>14:15</span></li>
+      <li><span>14:30</span></li>
+      <li><span>14:45</span></li>
+      <li><span>15:00</span></li>
+      <li><span>15:15</span></li>
+      <li><span>15:30</span></li>
+      <li><span>15:45</span></li>
+      <li><span>16:00</span></li>
+      <li><span>16:15</span></li>
+      <li><span>16:30</span></li>
+      <li><span>16:45</span></li>
+      <li><span>17:00</span></li>
+      <li><span>17:15</span></li>
+      <li><span>17:30</span></li>
+      <li><span>17:45</span></li>
+      <li><span>18:00</span></li>
+    </ul>
+  </div> <!-- .cd-schedule__timeline -->
+<!-- £Start£End£Duration£TalkDuration£FirstName£LastName£Title£TalkType£shortcode£Affiliation
+       1     2    3       4            5         6         7     8         9       10
+-->
+  <div class="cd-schedule__events">
+    <ul>
+      {{- range site.Data.csvs -}}
         <li class="cd-schedule__group">
           <div class="cd-schedule__top-info"><span>{{- .day -}}</span></div>
           <ul>
-          {{ range .lectures }}
-            <li class="cd-schedule__event">
-              <a data-start="{{- .start -}}" data-end="{{- .end -}}" data-content="event-abs-circuit" data-event="{{- .type -}}" href="#0">
-                <em class="cd-schedule__name">{{- .title -}}</em>
+          {{- range $i, $r := getCSV "?" .filename  -}}
+            <li class="cd-schedule__event {{ index $r 8 }}">
+              <a data-start="{{ index $r 1 }}" data-end="{{- index $r 2 -}}" data-content="{{- index $r 9 -}}" data-event="{{- index $r 8 -}}" href="#0">
+                <em class="cd-schedule__name {{ index $r 8 }}">{{- index $r 7 -}}</em>
+                <em class="cd-schedule__speaker {{ index $r 8 }}">{{ index $r 5 }} {{ index $r 6 }}</em>
               </a>
             </li>
-          {{ end }}
+          {{- end -}}
           </ul>
         </li>
-        {{ end }}
-      </ul>
-    </div>
-  
+      {{- end -}}
+    </ul>
+  </div>
+
     <div class="cd-schedule-modal">
       <header class="cd-schedule-modal__header">
         <div class="cd-schedule-modal__content">
           <span class="cd-schedule-modal__date"></span>
+          <h3 class="cd-schedule-modal__speaker"></h3>
           <h3 class="cd-schedule-modal__name"></h3>
         </div>
   
@@ -59,6 +81,6 @@
   
       <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
     </div>
-  
-    <div class="cd-schedule__cover-layer"></div>
-  </div> <!-- .cd-schedule -->
+
+  <div class="cd-schedule__cover-layer"></div>
+</div> <!-- .cd-schedule -->
