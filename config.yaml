@@ -7,7 +7,7 @@ params:
   footer: "Variational Learning of Quantum Matter, a Bernoulli workshop organized by Jannes Nys and Filippo Vicentini and supported by the Computational Quantum Science Laboratory (CQSL)."
 
   navbar:
-    logo: "images/epfl_logo.svg"
+    logo: "images/vlqm_logo_q.svg"
 
 markup:
   goldmark:

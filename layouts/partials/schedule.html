@@ -54,6 +54,7 @@
               <a data-start="{{ index $r 1 }}" data-end="{{- index $r 2 -}}" data-content="{{- index $r 9 -}}" data-event="{{- index $r 8 -}}" href="#0">
                 <em class="cd-schedule__name {{ index $r 8 }}">{{- index $r 7 -}}</em>
                 <em class="cd-schedule__speaker {{ index $r 8 }}">{{ index $r 5 }} {{ index $r 6 }}</em>
+                <em class="cd-schedule__institution hideme {{ index $r 8 }}">{{ index $r 10 }}</em>
               </a>
             </li>
           {{- end -}}
@@ -68,6 +69,7 @@
         <div class="cd-schedule-modal__content">
           <span class="cd-schedule-modal__date"></span>
           <h3 class="cd-schedule-modal__speaker"></h3>
+          <h4 class="cd-schedule-modal__institution"></h4>
           <h3 class="cd-schedule-modal__name"></h3>
         </div>
   

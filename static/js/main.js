@@ -17,6 +17,7 @@
 		this.modalClose = this.modal.getElementsByClassName('cd-schedule-modal__close')[0];
 		this.modalDate = this.modal.getElementsByClassName('cd-schedule-modal__date')[0];
 		this.modalEventSpeaker = this.modal.getElementsByClassName('cd-schedule-modal__speaker')[0];
+		this.modalEventInstitution = this.modal.getElementsByClassName('cd-schedule-modal__institution')[0];
 		this.modalEventName = this.modal.getElementsByClassName('cd-schedule-modal__name')[0];
 		this.coverLayer = this.element.getElementsByClassName('cd-schedule__cover-layer')[0];
 
@@ -111,8 +112,9 @@
 		console.log("open modal")
 
 		//update event name and time
-		this.modalEventSpeaker.textContent = target.getElementsByTagName('em')[1].textContent;
 		this.modalEventName.textContent = target.getElementsByTagName('em')[0].textContent;
+		this.modalEventSpeaker.textContent = target.getElementsByTagName('em')[1].textContent;
+		this.modalEventInstitution.textContent = target.getElementsByTagName('em')[2].textContent;
 		this.modalDate.textContent = target.getAttribute('data-start')+' - '+target.getAttribute('data-end');
 		this.modalDate.textContent = target.getAttribute('data-start')+' - '+target.getAttribute('data-end');
 		this.modal.setAttribute('data-event', target.getAttribute('data-event'));
