@@ -4299,3 +4299,8 @@ em.cd-schedule__name.spotlight {
 .cd-article-link:hover {
 	opacity: 0.8
 }
+
+
+.cd-schedule-modal__event-info p {
+	padding-top: 1em;
+}
