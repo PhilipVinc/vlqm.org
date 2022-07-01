@@ -3903,7 +3903,7 @@ em.cd-schedule__name {
 em.cd-schedule__name.short {
 	max-height: 1.5em;
 	font-size: 30% !important;
-	display: inline-block;
+	display: none;
 }
 em.cd-schedule__name.regular {
 	max-height: 3.2em;
