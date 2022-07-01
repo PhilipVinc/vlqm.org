@@ -1,22 +1,3 @@
-// The function actually applying the offset
-function offsetAnchor() {
-  if (location.hash.length !== 0) {
-    window.scrollTo(window.scrollX, window.scrollY - 50);
-  }
-}
-
-// Captures click events of all <a> elements with href starting with #
-$(document).on('click', 'a[href^="#"]', function(event) {
-  // Click events are captured before hashchanges. Timeout
-  // causes offsetAnchor to be called after the page jump.
-  window.setTimeout(function() {
-    offsetAnchor();
-  }, 0);
-});
-
-// Set the offset when entering page with hash present in the url
-window.setTimeout(offsetAnchor, 0);
-
 (function() {
 	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
@@ -35,6 +16,7 @@ window.setTimeout(offsetAnchor, 0);
 		this.modalBodyBg = this.element.getElementsByClassName('cd-schedule-modal__body-bg')[0];
 		this.modalClose = this.modal.getElementsByClassName('cd-schedule-modal__close')[0];
 		this.modalDate = this.modal.getElementsByClassName('cd-schedule-modal__date')[0];
+		this.modalEventSpeaker = this.modal.getElementsByClassName('cd-schedule-modal__speaker')[0];
 		this.modalEventName = this.modal.getElementsByClassName('cd-schedule-modal__name')[0];
 		this.coverLayer = this.element.getElementsByClassName('cd-schedule__cover-layer')[0];
 
@@ -44,6 +26,8 @@ window.setTimeout(offsetAnchor, 0);
 		this.animating = false;
 		this.supportAnimation = Util.cssSupports('transition');
 
+		this.eventPath = 'abstracts/';
+		
 		this.initSchedule();
 	};
 
@@ -124,21 +108,29 @@ window.setTimeout(offsetAnchor, 0);
 		var self = this;
 		var mq = self.mq();
 		this.animating = true;
+		console.log("open modal")
 
 		//update event name and time
+		this.modalEventSpeaker.textContent = target.getElementsByTagName('em')[1].textContent;
 		this.modalEventName.textContent = target.getElementsByTagName('em')[0].textContent;
+		this.modalDate.textContent = target.getAttribute('data-start')+' - '+target.getAttribute('data-end');
 		this.modalDate.textContent = target.getAttribute('data-start')+' - '+target.getAttribute('data-end');
 		this.modal.setAttribute('data-event', target.getAttribute('data-event'));
 
 		//update event content
-		this.loadEventContent(target.getAttribute('data-content'));
+		console.log("update loadEventContent")
+		var content_name = target.getAttribute('data-content')
+		console.log("loadEventContent", content_name)
+		this.loadEventContent(content_name);
 
 		Util.addClass(this.modal, 'cd-schedule-modal--open');
-		
+		console.log("addClass done")
+
 		setTimeout(function(){
 			//fixes a flash when an event is selected - desktop version only
 			Util.addClass(target.closest('li'), 'cd-schedule__event--selected');
 		}, 10);
+		console.log("here")
 
 		if( mq == 'mobile' ) {
 			self.modal.addEventListener('transitionend', function cb(){
@@ -182,6 +174,7 @@ window.setTimeout(offsetAnchor, 0);
 				self.modalHeaderBg.removeEventListener('transitionend', cb);
 			});
 		}
+		console.log("done")
 
 		//if browser do not support transitions -> no need to wait for the end of it
 		this.animationFallback();
@@ -257,6 +250,7 @@ window.setTimeout(offsetAnchor, 0);
 		this.animating = true;
 		var self = this;
 		var mq = this.mq();
+		console.log("doing")
 		if( mq == 'mobile' ) {
 			//reset modal style on mobile
 			self.modal.removeAttribute('style');
@@ -310,6 +304,7 @@ window.setTimeout(offsetAnchor, 0);
 	ScheduleTemplate.prototype.loadEventContent = function(content) {
 		// load the content of an event when user selects it
 		var self = this;
+		console.log("loadeventContent", content)
 
 		httpRequest = new XMLHttpRequest();
 		httpRequest.onreadystatechange = function() {
@@ -320,15 +315,19 @@ window.setTimeout(offsetAnchor, 0);
 	      }
 	    }
 		};
-		httpRequest.open('GET', content+'.html');
+		// httpRequest.open('GET', content+'.html');
+		httpRequest.open('GET', self.eventPath+content+'.html');
     httpRequest.send();
 	};
 
 	ScheduleTemplate.prototype.getEventContent = function(string) {
 		// reset the loaded event content so that it can be inserted in the modal
+		console.log("getEventContent:", string)
 		var div = document.createElement('div');
 		div.innerHTML = string.trim();
-		return div.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML;
+		var value = div.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML;
+		console.log("it is:", value)
+		return value
 	};
 
 	ScheduleTemplate.prototype.animationFallback = function() {

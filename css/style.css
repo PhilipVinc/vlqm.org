@@ -3682,6 +3682,10 @@ a {
 
 }
 
+.cd-schedule__event {
+	overflow: hidden;
+}
+
 .cd-schedule__events {
 	position: relative;
 	z-index: 1
@@ -3699,6 +3703,10 @@ a {
 		flex-wrap: nowrap
 	}
 
+}
+
+.cd-schedule__abstract {
+	display: none;
 }
 
 @media (min-width:80rem) {
@@ -3823,7 +3831,10 @@ a {
 }
 
 .cd-schedule__event a::before {
-	content: attr(data-start) " - " attr(data-end)
+	content: attr(data-start) " - " attr(data-end);
+	white-space: nowrap;
+	width: fit-content;
+	block-size: fit-content
 }
 
 @media (min-width:48rem) {
@@ -3845,7 +3856,7 @@ a {
 
 	.js .cd-schedule__event a {
 		padding: 0.75em;
-		padding: var(--space-sm);
+		/*padding: var(--space-sm);*/
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2)
 	}
 
@@ -3866,20 +3877,44 @@ a {
 	display: block;
 	color: hsl(0, 0%, 100%);
 	color: var(--color-white);
-	font-weight: bold;
+	/*font-weight: bold;*/
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale
 }
 
-.cd-schedule__name, .cd-schedule-modal__name {
-	font-size: 1.44em;
-	font-size: var(--text-lg)
+em.cd-schedule__name, 
+em.cd-schedule-modal__name {
 
 	word-break:  break-all;
 	-webkit-hyphens: auto;
    	-moz-hyphens: auto;
     hyphens: auto;
+   	font-size: 75% !important;
+}
 
+em.cd-schedule__name {
+	display: block;
+	overflow: hidden;
+	max-height: 3em;
+	text-overflow: ellipsis;
+	white-space: normal;
+}
+
+em.cd-schedule__name.short {
+	max-height: 1.5em;
+	font-size: 30% !important;
+	display: inline-block;
+}
+em.cd-schedule__name.regular {
+	max-height: 3.2em;
+}
+em.cd-schedule__name.spotlight {
+	max-height: 7.5em;
+}
+
+.cd-schedule__name, .cd-schedule-modal__name {
+	font-size: 1.44em;
+	font-size: var(--text-lg)
 }
 
 @media (min-width:64rem) {
@@ -3917,23 +3952,34 @@ a {
 	background: hsl(162, 14%, 68%);
 	background: var(--cd-color-event-3)
 }
-.cd-schedule__event [data-event="group"], .cd-schedule-modal[data-event="group"] .cd-schedule-modal__header-bg {
+.cd-schedule__event [data-event="regular"], .cd-schedule-modal[data-event="regular"] .cd-schedule-modal__header-bg {
+	background: hsl(31, 89%, 68%);
+	background: var(--cd-color-event-4)
+}
+.cd-schedule__event [data-event="regular"] {
+	color: hsl(271, 23%, 26%);
+}
+.cd-schedule__event [data-event="short"] {
+	color: hsl(271, 23%, 26%);
+}
+
+
+
+.cd-schedule__event [data-event="discuss"], .cd-schedule-modal[data-event="discuss"] .cd-schedule-modal__header-bg {
+	background: hsl(199, 25%, 46%);
+	background: var(--cd-color-event-1)
+}
+.cd-schedule__event [data-event="organizers"], .cd-schedule-modal[data-event="organizers"] .cd-schedule-modal__header-bg {
 	background: hsl(31, 89%, 68%);
 	background: var(--cd-color-event-4)
 }
 
-
-.cd-schedule__event [data-event="event-1"], .cd-schedule-modal[data-event="event-1"] .cd-schedule-modal__header-bg {
-	background: hsl(199, 25%, 46%);
-	background: var(--cd-color-event-1)
-}
-
-.cd-schedule__event [data-event="event-2"], .cd-schedule-modal[data-event="event-2"] .cd-schedule-modal__header-bg {
+.cd-schedule__event [data-event="posters"], .cd-schedule-modal[data-event="posters"] .cd-schedule-modal__header-bg {
 	background: hsl(271, 23%, 26%);
 	background: var(--cd-color-event-2)
 }
 
-.cd-schedule__event [data-event="event-3"], .cd-schedule-modal[data-event="event-3"] .cd-schedule-modal__header-bg {
+.cd-schedule__event [data-event="short"], .cd-schedule-modal[data-event="short"] .cd-schedule-modal__header-bg {
 	background: hsl(162, 14%, 68%);
 	background: var(--cd-color-event-3)
 }
