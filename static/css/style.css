@@ -4077,6 +4077,10 @@ em.cd-schedule__name.spotlight {
 	.cd-schedule-modal__content .cd-schedule-modal__name {
 		padding-top: 2em;
 	}
+	.cd-schedule-modal__content .cd-schedule-modal__institution {
+		padding-top: 0.5em;
+		font-size: 75%;
+	}
 
 }
 
